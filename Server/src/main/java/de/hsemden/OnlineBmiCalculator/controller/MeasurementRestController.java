@@ -24,10 +24,8 @@ public class MeasurementRestController {
      * @return Calculation result
      */
     @GetMapping(produces = "calculation/json")
-    public ResponseEntity<Measurement> calculate(@RequestParam("height") int height,
+    public ResponseEntity<Measurement> getMeasurement(@RequestParam("height") int height,
                                                  @RequestParam("weight") int weight) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
-
-
 }
