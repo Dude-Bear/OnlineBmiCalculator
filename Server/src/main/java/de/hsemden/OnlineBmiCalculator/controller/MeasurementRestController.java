@@ -23,7 +23,7 @@ public class MeasurementRestController {
      * @param weight Weight in kg
      * @return Calculation result
      */
-    @GetMapping(produces = "calculation/json")
+    @GetMapping(produces = "application/json")
     public ResponseEntity<Measurement> getMeasurement(@RequestParam("height") int height,
                                                  @RequestParam("weight") int weight) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
