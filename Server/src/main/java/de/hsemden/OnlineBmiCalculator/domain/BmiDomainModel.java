@@ -1,5 +1,8 @@
 package de.hsemden.OnlineBmiCalculator.domain;
 
+import de.hsemden.OnlineBmiCalculator.types.NutritionalStatus;
+import de.hsemden.OnlineBmiCalculator.types.NutritionalStatusConverter;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
@@ -8,6 +11,7 @@ import lombok.Data;
  */
 @Data
 @Builder
+@AllArgsConstructor
 public class BmiDomainModel {
     /**
      * The height in cm.
@@ -29,4 +33,38 @@ public class BmiDomainModel {
      * Source: https://www.euro.who.int/en/health-topics/disease-prevention/nutrition/a-healthy-lifestyle/body-mass-index-bmi
      */
     private int nutritionalStatus;
+
+    public BmiDomainModel(int height, int weight) {
+        this.height = height;
+        this.weight = weight;
+        this.bmi = calculateBodyMassIndex();
+        this.nutritionalStatus = NutritionalStatusConverter.ToInteger(calculateNutritionalStatus());
+    }
+
+    /**
+     * Calculates a nutritional status which is based on the WHO.
+     * Source: https://www.euro.who.int/en/health-topics/disease-prevention/nutrition/a-healthy-lifestyle/body-mass-index-bmi
+     * @return The Nutritional status defined by the WHO.
+     */
+    private NutritionalStatus calculateNutritionalStatus() {
+        if (bmi < 18.5) {
+            return NutritionalStatus.UnderWeight;
+        } else if (bmi <= 24.9) {
+            return NutritionalStatus.NormalWeight;
+        } else if (bmi <= 29.9) {
+            return NutritionalStatus.PreObesity;
+        } else if (bmi <= 34.9) {
+            return NutritionalStatus.ObesityClassI;
+        } else if (bmi <= 39.9) {
+            return NutritionalStatus.ObesityClassII;
+        } else {
+            return NutritionalStatus.ObesityClassIII;
+        }
+    }
+
+    private double calculateBodyMassIndex() {
+        return (double) weight / ((double) height * (double) height) * 10000; /* * 10000 to turn cm into m*/
+    }
+
 }
+

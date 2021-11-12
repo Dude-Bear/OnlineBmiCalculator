@@ -1,10 +1,13 @@
 package de.hsemden.OnlineBmiCalculator.api;
 
+import lombok.Data;
+
 import java.time.LocalDate;
 
 /***
  * The measurement api model class represents a measurement with its base attributes.
  */
+@Data
 public class MeasurementApiModel {
     /**
      * The height in cm.

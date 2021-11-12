@@ -1,8 +1,11 @@
 package de.hsemden.OnlineBmiCalculator.api;
 
+import lombok.Data;
+
 /***
  * The BMI api model class represents a BMI object with its attributes.
  */
+@Data
 public class BmiApiModel {
     /**
      * The height in cm.
