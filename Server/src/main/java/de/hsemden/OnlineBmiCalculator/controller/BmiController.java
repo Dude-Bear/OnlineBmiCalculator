@@ -1,8 +1,6 @@
 package de.hsemden.OnlineBmiCalculator.controller;
 
 import de.hsemden.OnlineBmiCalculator.api.BmiApiModel;
-import de.hsemden.OnlineBmiCalculator.mapper.BmiMapper;
-import de.hsemden.OnlineBmiCalculator.service.BmiService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,34 +22,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class BmiController {
 
-    /**
-     * Der BmiService wird für die Verwaltung von BMI-Informationen verwendet.
-     *
-     * Er wird mittels Spring Dependency Injection (konstruktorbasiert) initialisiert. Der Konstruktor wird
-     * mittels "@RequiredArgsConstructor" Annotation für alle als "final" deklarierten Attribute erstellt.
-     * Die Spring DI sucht nach einer Spring Komponente (Service), die dieses Interface implementiert und
-     * übernimmt die Initialisierung.
-     */
-    private final BmiService bmiService;
-
-    /**
-     * Mapper Interface für das Mapping zwischen API und Domain Klassen.
-     */
-    private final BmiMapper bmiMapper;
 
     /**
      * Returns a json object that includes the bmi.
-     *  TODO: Implementierung eines Servicesaufrufes.
      *
      * @param height Height in cm
      * @param weight Weight in kg
-     * @return Calculation result
+     * @return Calculation result in form of a json
      */
     @GetMapping(produces = "application/json")
     public ResponseEntity<BmiApiModel> getMeasurement(@RequestParam("height") int height,
                                                       @RequestParam("weight") int weight) {
-        final de.hsemden.OnlineBmiCalculator.domain.BmiDomainModel bmiDomainModel = bmiService.getBmi(height, weight);
-        final BmiApiModel bmiApiModel = bmiMapper.mapToApi(bmiDomainModel);
-        return new ResponseEntity<>(bmiApiModel,HttpStatus.OK);
+        return new ResponseEntity<>(new BmiApiModel(height,weight),HttpStatus.OK);
     }
 }
