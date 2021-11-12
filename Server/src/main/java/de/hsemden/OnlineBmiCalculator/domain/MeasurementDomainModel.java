@@ -1,11 +1,16 @@
-package de.hsemden.OnlineBmiCalculator.api;
+package de.hsemden.OnlineBmiCalculator.domain;
+
+import lombok.Builder;
+import lombok.Data;
 
 import java.time.LocalDate;
 
 /***
- * The measurement api model class represents a measurement with its base attributes.
+ * The Measurement Domain Model class defines the attributes of a measurement.
  */
-public class Measurement {
+@Data
+@Builder
+public class MeasurementDomainModel {
     /**
      * The height in cm.
      */
@@ -31,5 +36,4 @@ public class Measurement {
      * Source: https://www.euro.who.int/en/health-topics/disease-prevention/nutrition/a-healthy-lifestyle/body-mass-index-bmi
      */
     private int nutritionalStatus;
-
 }

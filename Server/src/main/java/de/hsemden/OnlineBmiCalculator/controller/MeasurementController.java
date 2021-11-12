@@ -1,6 +1,6 @@
 package de.hsemden.OnlineBmiCalculator.controller;
 
-import de.hsemden.OnlineBmiCalculator.api.Measurement;
+import de.hsemden.OnlineBmiCalculator.api.MeasurementApiModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping(value = "measurement")
-public class MeasurementRestController {
+public class MeasurementController {
 
     /**
      * Returns a measurement that includes the bmi.
@@ -24,8 +24,8 @@ public class MeasurementRestController {
      * @return Calculation result
      */
     @GetMapping(produces = "application/json")
-    public ResponseEntity<Measurement> getMeasurement(@RequestParam("height") int height,
-                                                 @RequestParam("weight") int weight) {
+    public ResponseEntity<MeasurementApiModel> getMeasurement(@RequestParam("height") int height,
+                                                              @RequestParam("weight") int weight) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 }

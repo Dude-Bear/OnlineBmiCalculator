@@ -1,6 +1,7 @@
 package de.hsemden.OnlineBmiCalculator.mapper;
 
-import de.hsemden.OnlineBmiCalculator.domain.Measurement;
+import de.hsemden.OnlineBmiCalculator.api.MeasurementApiModel;
+import de.hsemden.OnlineBmiCalculator.domain.MeasurementDomainModel;
 import org.mapstruct.Mapper;
 import org.mapstruct.NullValueMappingStrategy;
 
@@ -19,16 +20,16 @@ public interface MeasurementMapper {
 
     /**
      * Creates a domain measurement object of the given api measurement object.
-     * @param measurement api measurement object
+     * @param measurementApiModel api measurement object
      * @return domain measurement object
      */
-    Measurement mapToDomain(de.hsemden.OnlineBmiCalculator.api.Measurement measurement);
+    MeasurementDomainModel mapToDomain(MeasurementApiModel measurementApiModel);
 
 
     /**
      * Creates an api measurement object of the given domain measurement object.
-     * @param measurement domain measurement object
+     * @param measurementDomainModel domain measurement object
      * @return api measurement object
      */
-    de.hsemden.OnlineBmiCalculator.api.Measurement mapToApi(Measurement measurement);
+    MeasurementApiModel mapToApi(MeasurementDomainModel measurementDomainModel);
 }
