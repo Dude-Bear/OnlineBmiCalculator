@@ -1,4 +1,4 @@
-package de.hsemden.OnlineBmiCalculator.domain;
+package de.hsemden.onlinebmicalculator.domain;
 
 import lombok.Builder;
 import lombok.Data;

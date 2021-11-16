@@ -1,7 +1,7 @@
-package de.hsemden.OnlineBmiCalculator.mapper;
+package de.hsemden.onlinebmicalculator.mapper;
 
-import de.hsemden.OnlineBmiCalculator.api.MeasurementApiModel;
-import de.hsemden.OnlineBmiCalculator.domain.MeasurementDomainModel;
+import de.hsemden.onlinebmicalculator.api.MeasurementApiModel;
+import de.hsemden.onlinebmicalculator.domain.MeasurementDomainModel;
 import org.mapstruct.Mapper;
 import org.mapstruct.NullValueMappingStrategy;
 

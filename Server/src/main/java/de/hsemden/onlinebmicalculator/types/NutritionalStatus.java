@@ -1,4 +1,4 @@
-package de.hsemden.OnlineBmiCalculator.types;
+package de.hsemden.onlinebmicalculator.types;
 
 public enum NutritionalStatus {
     UnderWeight,

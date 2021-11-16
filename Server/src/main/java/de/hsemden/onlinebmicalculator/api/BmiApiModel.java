@@ -1,7 +1,7 @@
-package de.hsemden.OnlineBmiCalculator.api;
+package de.hsemden.onlinebmicalculator.api;
 
-import de.hsemden.OnlineBmiCalculator.types.NutritionalStatus;
-import de.hsemden.OnlineBmiCalculator.types.NutritionalStatusConverter;
+import de.hsemden.onlinebmicalculator.types.NutritionalStatus;
+import de.hsemden.onlinebmicalculator.types.NutritionalStatusConverter;
 import lombok.Data;
 
 /***

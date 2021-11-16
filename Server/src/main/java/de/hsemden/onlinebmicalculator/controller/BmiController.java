@@ -1,6 +1,6 @@
-package de.hsemden.OnlineBmiCalculator.controller;
+package de.hsemden.onlinebmicalculator.controller;
 
-import de.hsemden.OnlineBmiCalculator.api.BmiApiModel;
+import de.hsemden.onlinebmicalculator.api.BmiApiModel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

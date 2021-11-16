@@ -1,4 +1,4 @@
-package de.hsemden.OnlineBmiCalculator.api;
+package de.hsemden.onlinebmicalculator.api;
 
 import lombok.Data;
 

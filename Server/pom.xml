@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>de.hsemden</groupId>
-	<artifactId>OnlineBmiCalculator</artifactId>
+	<artifactId>onlinebmicalculator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>OnlineBmiCalculator</name>
 	<description>An online application to calculate the BMI</description>

@@ -1,4 +1,4 @@
-package de.hsemden.OnlineBmiCalculator;
+package de.hsemden.onlinebmicalculator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
