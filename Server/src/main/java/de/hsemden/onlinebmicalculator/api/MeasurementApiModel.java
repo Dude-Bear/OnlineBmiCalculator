@@ -34,5 +34,4 @@ public class MeasurementApiModel {
      * Source: https://www.euro.who.int/en/health-topics/disease-prevention/nutrition/a-healthy-lifestyle/body-mass-index-bmi
      */
     private int nutritionalStatus;
-
 }
