@@ -1,5 +1,6 @@
 package de.hsemden.onlinebmicalculator.api;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -8,6 +9,7 @@ import java.time.LocalDate;
  * The measurement api model class represents a measurement with its base attributes.
  */
 @Data
+@Builder
 public class MeasurementApiModel {
     /**
      * The height in cm.
