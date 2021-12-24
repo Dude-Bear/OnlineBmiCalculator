@@ -3,6 +3,12 @@ package de.hsemden.onlinebmicalculator.api;
 import de.hsemden.onlinebmicalculator.types.NutritionalStatus;
 import de.hsemden.onlinebmicalculator.types.NutritionalStatusConverter;
 import lombok.Data;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 /***
  * The BMI api model class represents a BMI object with its attributes.
@@ -12,22 +18,38 @@ public class BmiApiModel {
     /**
      * The height in cm.
      */
+    @NotNull
+    @Positive
+    @Min(10)
+    @Max(500)
     private int height;
 
     /**
      * The weight in kg.
      */
+    @NotNull
+    @Positive
+    @Min(10)
+    @Max(1000)
     private int weight;
 
     /**
      * The body mass index.
      */
+    @NotNull
+    @Positive
+    @Min(5)
+    @Max(500)
     private double bmi;
 
     /**
      * The Nutritional status defined by the WHO.
      * Source: https://www.euro.who.int/en/health-topics/disease-prevention/nutrition/a-healthy-lifestyle/body-mass-index-bmi
      */
+    @NotNull
+    @Positive
+    @Min(1)
+    @Max(5)
     private int nutritionalStatus;
 
     /**
