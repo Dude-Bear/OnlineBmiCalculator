@@ -3,6 +3,7 @@ package de.hsemden.onlinebmicalculator.controller;
 import de.hsemden.onlinebmicalculator.api.MeasurementApiModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /***
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
  * GET /measurement -> returns a json that includes the bmi and the nutritional status.
  */
 @RestController
+@Validated
 @RequestMapping(value = "measurement")
 public class MeasurementController {
 
