@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.constraints.*;
+
 /***
  * REST Controller for the measurement API.
  *
@@ -18,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value="bmi")
-@Validated
 @RequiredArgsConstructor
+@Validated
 public class BmiController {
 
 
@@ -30,9 +32,10 @@ public class BmiController {
      * @param weight Weight in kg
      * @return Calculation result in form of a json
      */
+    //@Pattern(regexp = "^\\d{1,3}$")
     @GetMapping(produces = "application/json")
-    public ResponseEntity<BmiApiModel> getMeasurement(@RequestParam("height") int height,
-                                                      @RequestParam("weight") int weight) {
+    public ResponseEntity<BmiApiModel> getMeasurement(@Positive @Min(30) @Max(300) @NotNull  @RequestParam("height") int height,
+                                                      @Positive @Min(10) @Max(500) @NotNull  @RequestParam("weight") int weight) {
         return new ResponseEntity<>(new BmiApiModel(height,weight),HttpStatus.OK);
     }
 }
