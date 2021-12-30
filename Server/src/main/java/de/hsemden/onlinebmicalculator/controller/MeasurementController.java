@@ -3,7 +3,10 @@ package de.hsemden.onlinebmicalculator.controller;
 import de.hsemden.onlinebmicalculator.api.MeasurementApiModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /***
  * REST Controller for the measurement API.
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping(value = "measurement")
+@Validated
 public class MeasurementController {
 
     /**
@@ -24,8 +28,8 @@ public class MeasurementController {
      * @return Calculation result
      */
     @GetMapping(produces = "application/json")
-    public ResponseEntity<MeasurementApiModel> getMeasurement(@RequestParam("height") int height,
-                                                              @RequestParam("weight") int weight) {
+    public ResponseEntity<MeasurementApiModel> getMeasurement( @RequestParam("height") int height,
+                                                               @RequestParam("weight") int weight) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 }
