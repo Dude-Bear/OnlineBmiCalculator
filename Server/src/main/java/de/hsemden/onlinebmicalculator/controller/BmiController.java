@@ -35,7 +35,7 @@ public class BmiController {
     //@Pattern(regexp = "^\\d{1,3}$")
     @GetMapping(produces = "application/json")
     public ResponseEntity<BmiApiModel> getMeasurement(@Positive @Min(30) @Max(300) @NotNull  @RequestParam("height") int height,
-                                                      @Positive @Min(10) @Max(500) @NotNull  @RequestParam("weight") int weight) {
+                                                      @Positive @Min(10) @Max(1000) @NotNull  @RequestParam("weight") int weight) {
         return new ResponseEntity<>(new BmiApiModel(height,weight),HttpStatus.OK);
     }
 }

@@ -18,8 +18,8 @@ public class MeasurementApiModel {
      */
     @NotNull
     @Positive
-    @Min(10)
-    @Max(500)
+    @Min(30)
+    @Max(300)
     private int height;
 
     /**
