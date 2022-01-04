@@ -16,15 +16,12 @@ import org.mapstruct.NullValueMappingStrategy;
  */
 @Mapper(componentModel = "spring", nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL)
 public interface MeasurementMapper {
-
-
     /**
      * Creates a domain measurement object of the given api measurement object.
      * @param measurementApiModel api measurement object
      * @return domain measurement object
      */
     MeasurementDomainModel mapToDomain(MeasurementApiModel measurementApiModel);
-
 
     /**
      * Creates an api measurement object of the given domain measurement object.

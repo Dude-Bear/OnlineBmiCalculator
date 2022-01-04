@@ -3,7 +3,6 @@ package de.hsemden.onlinebmicalculator.domain;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.validation.constraints.Min;
 import java.time.LocalDate;
 
 /***

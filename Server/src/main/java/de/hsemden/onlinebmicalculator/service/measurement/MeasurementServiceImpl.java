@@ -1,6 +1,6 @@
 package de.hsemden.onlinebmicalculator.service.measurement;
 
-import de.hsemden.onlinebmicalculator.api.MeasurementApiModel;
+import de.hsemden.onlinebmicalculator.domain.MeasurementDomainModel;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -20,20 +20,20 @@ import java.util.List;
 @Service
 public class MeasurementServiceImpl implements MeasurementService {
     @Override
-    public void createMeasurement(long userId, MeasurementApiModel measurement) {
+    public void createMeasurement(long userId, MeasurementDomainModel measurement) {
         // TODO: Implementierung dieser Methode, inkl. Datenbankzugriff
     }
 
     @Override
-    public List<MeasurementApiModel> getMeasurementList(long userId, LocalDate fromDate, LocalDate toDate) {
+    public List<MeasurementDomainModel> getMeasurementList(long userId, LocalDate fromDate, LocalDate toDate) {
         // TODO: Implementierung dieser Methode, inkl. Datenbankzugriff
 
         // Vorübergehende Rückgabe statischer Werte (Mocks) zu Testzwecken
         return Arrays.asList(
-                MeasurementApiModel.builder().dateOfMeasurement(LocalDate.parse("1.1.1999")).bmi(24).height(190).weight(120).build(),
-                MeasurementApiModel.builder().dateOfMeasurement(LocalDate.parse("1.2.1999")).bmi(25).height(190).weight(130).build(),
-                MeasurementApiModel.builder().dateOfMeasurement(LocalDate.parse("1.3.1999")).bmi(26).height(190).weight(140).build(),
-                MeasurementApiModel.builder().dateOfMeasurement(LocalDate.parse("1.4.1999")).bmi(27).height(190).weight(150).build()
+                MeasurementDomainModel.builder().dateOfMeasurement(LocalDate.parse("1.1.1999")).bmi(24).height(190).weight(120).build(),
+                MeasurementDomainModel.builder().dateOfMeasurement(LocalDate.parse("1.2.1999")).bmi(25).height(190).weight(130).build(),
+                MeasurementDomainModel.builder().dateOfMeasurement(LocalDate.parse("1.3.1999")).bmi(26).height(190).weight(140).build(),
+                MeasurementDomainModel.builder().dateOfMeasurement(LocalDate.parse("1.4.1999")).bmi(27).height(190).weight(150).build()
         );
     }
 }

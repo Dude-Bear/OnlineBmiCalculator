@@ -1,5 +1,6 @@
 package de.hsemden.onlinebmicalculator.service.measurement;
-import de.hsemden.onlinebmicalculator.api.MeasurementApiModel;
+
+import de.hsemden.onlinebmicalculator.domain.MeasurementDomainModel;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -11,7 +12,7 @@ public interface MeasurementService {
      * @param userId Identität des Benutzers
      * @param measurement der zu speichernde Messwert
      */
-    void createMeasurement(long userId, MeasurementApiModel measurement);
+    void createMeasurement(long userId, MeasurementDomainModel measurement);
 
     /**
      * Gibt eine Liste aller Messwerte für einen bestimmten Benutzer
@@ -22,5 +23,5 @@ public interface MeasurementService {
      * @param toDate End-Datum
      * @return List alle Messwerte
      */
-    List<MeasurementApiModel> getMeasurementList(long userId, LocalDate fromDate, LocalDate toDate);
+    List<MeasurementDomainModel> getMeasurementList(long userId, LocalDate fromDate, LocalDate toDate);
 }
