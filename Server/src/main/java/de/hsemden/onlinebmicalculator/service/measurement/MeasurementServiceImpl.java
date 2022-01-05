@@ -30,10 +30,10 @@ public class MeasurementServiceImpl implements MeasurementService {
 
         // Vorübergehende Rückgabe statischer Werte (Mocks) zu Testzwecken
         return Arrays.asList(
-                MeasurementDomainModel.builder().dateOfMeasurement(LocalDate.parse("1.1.1999")).bmi(24).height(190).weight(120).build(),
-                MeasurementDomainModel.builder().dateOfMeasurement(LocalDate.parse("1.2.1999")).bmi(25).height(190).weight(130).build(),
-                MeasurementDomainModel.builder().dateOfMeasurement(LocalDate.parse("1.3.1999")).bmi(26).height(190).weight(140).build(),
-                MeasurementDomainModel.builder().dateOfMeasurement(LocalDate.parse("1.4.1999")).bmi(27).height(190).weight(150).build()
+                MeasurementDomainModel.builder().dateOfMeasurement(LocalDate.of(1999,1,1)).bmi(24).height(190).weight(120).build(),
+                MeasurementDomainModel.builder().dateOfMeasurement(LocalDate.of(1999,2,1)).bmi(25).height(190).weight(130).build(),
+                MeasurementDomainModel.builder().dateOfMeasurement(LocalDate.of(1999,3,1)).bmi(26).height(190).weight(140).build(),
+                MeasurementDomainModel.builder().dateOfMeasurement(LocalDate.of(1999,4,1)).bmi(27).height(190).weight(150).build()
         );
     }
 }

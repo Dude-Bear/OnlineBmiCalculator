@@ -3,9 +3,8 @@ package de.hsemden.onlinebmicalculator.api;
 import de.hsemden.onlinebmicalculator.types.NutritionalStatus;
 import de.hsemden.onlinebmicalculator.types.NutritionalStatusConverter;
 import lombok.Data;
-import org.hibernate.validator.constraints.Length;
+import lombok.Getter;
 
-import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -15,6 +14,7 @@ import javax.validation.constraints.Positive;
  * The BMI api model class represents a BMI object with its attributes.
  */
 @Data
+@Getter
 public class BmiApiModel {
     /**
      * The height in cm.
