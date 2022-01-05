@@ -20,14 +20,26 @@ class BmiControllerTests {
 	}
 
 	@Test
-	void calculateBmi() {
+	void calculateBmi_height190_weight88() {
 		var measurement = bmiController.getMeasurement(190, 88);
 		var statusCode = measurement.getStatusCode();
 		assertThat(statusCode).isEqualTo(HttpStatus.OK);
 
 		var body = measurement.getBody();
 		assertThat(body).isNotNull();
-		var bmi = body.getBmi();
-		assertThat(bmi).isEqualTo(24.37673130193906);
+		assertThat(body.getBmi()).isEqualTo(24.37673130193906);
+		assertThat(body.getNutritionalStatus()).isEqualTo(1);
+	}
+
+	@Test
+	void calculateBmi_height160_weight101() {
+		var measurement = bmiController.getMeasurement(160, 101);
+		var statusCode = measurement.getStatusCode();
+		assertThat(statusCode).isEqualTo(HttpStatus.OK);
+
+		var body = measurement.getBody();
+		assertThat(body).isNotNull();
+		assertThat(body.getBmi()).isEqualTo(39.453125);
+		assertThat(body.getNutritionalStatus()).isEqualTo(4);
 	}
 }
